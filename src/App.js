@@ -1,11 +1,12 @@
+import ContextProviderUser from './context/ContextProviderUser';
 import RoutesApp from './routes/RoutesApp';
 
 function App() {
   return (
     <div className="App">
-      <RoutesApp>
-
-      </RoutesApp>
+        <ContextProviderUser>
+          <RoutesApp/>
+        </ContextProviderUser>
     </div>
   );
 }

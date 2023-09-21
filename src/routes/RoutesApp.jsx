@@ -10,7 +10,7 @@ const RoutesApp = () => {
     <Routes>
         <Route path='/' element={<Main/>}></Route>
         <Route path='/add' element={<AddUser/>}></Route>
-        <Route path='/edit' element={<EditUser/>}></Route>
+        <Route path='/edit/:identity' element={<EditUser/>}></Route>
         <Route path='*' element={<Main/>}></Route>
     </Routes>
     </BrowserRouter>
