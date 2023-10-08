@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./addUser.css";
 import { useNavigate } from "react-router-dom";
 
+
 function AddUser() {
   const navigate = useNavigate();
   const [newUser, setNewUser] = useState({
@@ -28,7 +29,7 @@ function AddUser() {
       ) {
         alert("Hay campos vacíos");
       } else {
-        const request = await fetch("http://localhost:4000/create-user", {
+        const request = await fetch(process.env.REACT_APP_API_BASE_URL+"/create-user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

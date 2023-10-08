@@ -27,7 +27,7 @@ function EditUser() {
       if (user.name==="" || user.identity==="" || user.phone==="" || user.email==="") {
         alert("Hay campos vacíos");
       }else{
-      const request = await fetch("http://localhost:4000/update",{
+      const request = await fetch(process.env.REACT_APP_API_BASE_URL+"/update",{
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

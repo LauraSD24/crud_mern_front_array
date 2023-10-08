@@ -9,7 +9,7 @@ function Main() {
 
   const deleteUserRequest = async (id) =>{
     try {
-      const request = await fetch("http://localhost:4000/delete/"+id,{
+      const request = await fetch(process.env.REACT_APP_API_BASE_URL+"/delete/"+id,{
         method: "DELETE"
       });
       const dataResponse = await request.json();
@@ -24,7 +24,7 @@ function Main() {
   useEffect(()=>{
     const getAllUsers = async () => {
       try {
-        const request = await fetch("http://localhost:4000/get-all-users");
+        const request = await fetch(process.env.REACT_APP_API_BASE_URL+"/get-all-users");
         const response = await request.json();
         setListUsers([...response.data]);
       } catch (error) {
@@ -33,6 +33,7 @@ function Main() {
     }
     getAllUsers();
   },[]);
+  
   return (
     <div className="main">
       <h1>Registro de usuarios</h1>
